@@ -14,15 +14,19 @@ public class EmployeeWage {
 		int empRatePerHr = 20;
 		int empCheck = (int) (Math.random() * 3) + 1;
 
-		if (empCheck == isFullTime) {
+		switch (empCheck) {
+		case isFullTime:
 			System.out.println("Employee is full time");
 			empHrs = 8;
-		} else if (empCheck == isPartTime) {
+			break;
+		case isPartTime:
 			System.out.println("Employee is part time");
 			empHrs = 4;
-		} else {
+			break;
+		case isAbsent:
 			System.out.println("Employee is absent");
 			empHrs = 0;
+			break;
 		}
 		empWage = empHrs * empRatePerHr;
 		System.out.println("employee daily wage : " + empWage);
